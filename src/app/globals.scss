@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './assets/scss/typo';
+@import './assets/scss/link';
+@import './assets/scss/input';
+@import './assets/scss/btn';
+
+body {
+  color: #fff;
+  background: #0f0f0f;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+}
+
+.header {
+  &::before {
+    @apply bg-[#0f0f0f]/90;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    z-index: -1;
+    content: '';
+  }
+}

@@ -30,7 +30,7 @@ interface DetailedSize {
 type SingleSize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'One Size';
 
 export interface Size {
-  sizes: DetailedSize | SingleSize;
+  size: DetailedSize | SingleSize;
   categoryUrl: string;
 }
 

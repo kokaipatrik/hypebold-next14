@@ -1,5 +1,8 @@
+import million from "million/compiler";
+ 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+  reactStrictMode: true,
   webpack(config, { dev: isDev, isServer }) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg')
@@ -25,4 +28,13 @@ module.exports = {
 
     return config;
   },
+  experimental: {
+    webpackBuildWorker: true
+  },
 };
+ 
+const millionConfig = {
+  auto: true,// if you're using RSC: auto: { rsc: true },
+};
+ 
+export default million.next(nextConfig, millionConfig);

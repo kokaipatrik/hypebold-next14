@@ -1,0 +1,52 @@
+.select {
+  @apply relative;
+
+  &.is-open {
+    .select__dropdown {
+      @apply top-[calc(100%+10px)] visible scale-100 opacity-[1];
+    }
+
+    .select__arrow {
+      @apply border-[#A0A0A0];
+
+      &::before {
+        @apply -rotate-[135deg] bg-[#A0A0A0];
+      }
+
+      &::after {
+        @apply rotate-[135deg] bg-[#A0A0A0];
+      }
+    }
+  }
+
+  .select__selected {
+    @apply relative h-[40px] text-ellipsis rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] text-[14px] font-medium cursor-pointer;
+  }
+
+  .select__arrow {
+    @apply absolute top-[50%] -translate-y-[50%] right-[10px] w-[20px] h-[20px] border-[1.5px] border-[#606060] rounded-[10px] transition-all duration-300;
+
+    &::before,
+    &::after {
+      @apply absolute w-[1.5px] h-[6px] bg-[#606060] rounded-[1px] top-[50%] -translate-y-[50%] transition-all duration-300;
+
+      content: '';
+    }
+
+    &::before {
+      @apply -rotate-45 left-[6px];
+    }
+
+    &::after {
+      @apply rotate-45 right-[6px];
+    }
+  }
+
+  .select__dropdown {
+    @apply absolute top-[100%] w-full rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] transition-all invisible scale-95 opacity-0;
+  }
+  
+  .select__item {
+    @apply text-[#555555] text-[14px] leading-[28px] transition-all duration-300 hover:text-[#A0A0A0] cursor-pointer;
+  }
+}

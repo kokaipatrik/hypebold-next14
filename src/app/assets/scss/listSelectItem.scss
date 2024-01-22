@@ -1,0 +1,26 @@
+.list-select-item {
+  @apply relative inline-block cursor-pointer rounded-[12px] border-[1px] border-[#262626] bg-[#1A1A1A] px-[18px] py-[7px] text-[14px] font-medium text-[#7D7D7D] transition-all duration-300;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #2cf2ff, #2c41ff) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+  }
+
+  &.is-selected {
+    @apply bg-[#2D2D2D] text-[#C7C7C7] border-transparent;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

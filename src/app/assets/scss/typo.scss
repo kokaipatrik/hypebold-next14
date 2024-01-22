@@ -1,0 +1,8 @@
+html {
+  @apply text-[14px] lg:text-[16px];
+}
+
+h1,
+.h1 {
+  @apply text-5xl font-black lg:text-6xl;
+}

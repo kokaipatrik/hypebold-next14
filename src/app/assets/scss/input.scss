@@ -1,0 +1,15 @@
+.input {
+  @apply absolute right-0 z-10 h-[40px] text-ellipsis rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] text-[15px] font-medium transition-[border] transition-[width] duration-200 placeholder:text-[#555555] focus:border-[#282828] focus:outline-none;
+}
+
+.label {
+  @apply mb-[12px] block;
+}
+
+@layer base {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

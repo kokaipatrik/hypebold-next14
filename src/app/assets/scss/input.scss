@@ -1,5 +1,5 @@
 .input {
-  @apply absolute right-0 z-10 h-[40px] text-ellipsis rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] text-[15px] font-medium transition-[border] transition-[width] duration-200 placeholder:text-[#555555] focus:border-[#282828] focus:outline-none;
+  @apply absolute right-0 z-10 h-[40px] text-ellipsis rounded-[12px] border-[1px] border-gray bg-gray-dark px-[12px] py-[8px] text-[15px] font-medium transition-[border] transition-[width] duration-200 placeholder:text-gray-5 focus:border-gray-2 focus:outline-none;
 }
 
 .label {

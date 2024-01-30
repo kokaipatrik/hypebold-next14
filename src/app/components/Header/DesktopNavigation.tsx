@@ -21,7 +21,7 @@ export default function DesktopNavigation() {
     listItem:
       'relative flex items-center h-full text-[16px] text-[#909090] font-medium transition-all duration-300 hover:text-white',
     dropdownList:
-      'absolute top-[100%] -left-[12px] w-[200px] px-[12px] py-[10px] backdrop-blur-[10px] bg-[#121212]/90 border-[1px] border-[#262626] rounded-[12px] transition-all',
+      'absolute top-[100%] -left-[12px] w-[200px] px-[12px] py-[10px] backdrop-blur-[10px] bg-gray-dark/90 border-[1px] border-gray rounded-[12px] transition-all',
     dropdownItem:
       'text-[15px] leading-[28px] text-[#909090] font-medium transition-all duration-300 hover:text-white',
   };
@@ -35,10 +35,10 @@ export default function DesktopNavigation() {
             onMouseEnter={dropdownEnter}
             onMouseLeave={dropdownLeave}
           >
-            <a className='flex cursor-pointer items-center' tabIndex={0}>
+            <p className='flex cursor-pointer items-center' tabIndex={0}>
               Brands
               <ArrowDownIcon className='ml-[8px]' />
-            </a>
+            </p>
             {config.brands.length > 0 && (
               <ul
                 className={`${styles.dropdownList} ${

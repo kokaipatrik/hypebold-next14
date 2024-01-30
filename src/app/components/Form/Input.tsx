@@ -28,9 +28,9 @@ export default function Input({
           {label}
         </label>
       )}
-      <div className='relative h-[40px] w-full z-0'>
+      <div className='relative z-0 h-[40px] w-full'>
         {icon && (
-          <div className={`${iconPosition} left-[10px] [&>svg]:text-[#555555]`}>
+          <div className={`${iconPosition} left-[10px] [&>svg]:text-gray-5`}>
             {icon}
           </div>
         )}

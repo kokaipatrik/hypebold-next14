@@ -15,7 +15,7 @@ export default function Backdrop() {
 
   return backdropIsActive ? (
     <div
-      className='fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-50 transition-all'
+      className='fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-70 transition-all'
       onClick={() => exit()}
     />
   ) : null;

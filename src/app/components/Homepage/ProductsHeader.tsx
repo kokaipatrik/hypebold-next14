@@ -21,8 +21,8 @@ export default function ProductsHeader() {
             <Image
               src={`/images/product${i + 1}.jpg`}
               alt='image'
-              layout='fill'
               className='absolute top-0'
+              fill
             />
           </figure>
         </div>

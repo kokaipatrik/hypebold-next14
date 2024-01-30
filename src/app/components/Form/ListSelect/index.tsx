@@ -9,7 +9,12 @@ interface ListSelectProps {
   select: any;
 }
 
-export default function ListSelect({ name, label, items, select }: ListSelectProps) {
+export default function ListSelect({
+  name,
+  label,
+  items,
+  select,
+}: ListSelectProps) {
   const [selectedItem, setSelectedItem] = useState({
     name: '',
     url: '',

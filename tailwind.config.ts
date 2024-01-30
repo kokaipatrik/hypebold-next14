@@ -9,7 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        red: '#CD4747',
+        'red': '#CD4747',
+        'black': '#0F0F0F',
+        'gray-dark': '#121212',
+        'gray-dark-2': '#181818',
+        'gray-dark-3': '#1D1C1C',
+        'gray': '#262626',
+        'gray-2': '#282828',
+        'gray-3': '#383838',
+        'gray-4': '#414141',
+        'gray-5': '#555555',
+        'gray-6': '#606060',
       },
       keyframes: {
         lineUp: {

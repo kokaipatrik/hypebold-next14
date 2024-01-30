@@ -11,14 +11,23 @@ interface SelectProps {
   selected?: any;
 }
 
-export default function Select({ name, label, placeholder, items, select, selected }: SelectProps) {
+export default function Select({
+  name,
+  label,
+  placeholder,
+  items,
+  select,
+  selected,
+}: SelectProps) {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState(selected
-    ? selected 
-    : {
-      name: '',
-      value: '',
-    });
+  const [selectedItem, setSelectedItem] = useState(
+    selected
+      ? selected
+      : {
+          name: '',
+          value: '',
+        }
+  );
 
   const selectItem = (item: any) => {
     setSelectedItem(item);
@@ -38,11 +47,11 @@ export default function Select({ name, label, placeholder, items, select, select
       {items?.length > 0 && (
         <div className={`select ${dropdownIsOpen ? 'is-open' : null}`}>
           <div
-            className="select__selected"
+            className='select__selected'
             onClick={() => setDropdownIsOpen(!dropdownIsOpen)}
           >
             {selectedItem.name ? selectedItem.name : placeholder}
-            <div className="select__arrow" />
+            <div className='select__arrow' />
           </div>
           <ul className='select__dropdown'>
             {items.map((item: any, key: number) => (
@@ -59,4 +68,4 @@ export default function Select({ name, label, placeholder, items, select, select
       )}
     </div>
   );
-};
+}

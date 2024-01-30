@@ -16,7 +16,7 @@ export default function UserAction() {
 
   const styles = {
     dropdownList:
-      'absolute top-[calc(100%+8px)] -right-[10px] w-[180px] px-[14px] py-[10px] bg-[#121212] border-[1px] border-[#262626] rounded-[12px] transition-all',
+      'absolute top-[calc(100%+8px)] -right-[10px] w-[180px] px-[14px] py-[10px] bg-gray-dark border-[1px] border-gray rounded-[12px] transition-all',
     dropdownItem:
       'text-right text-sm text-[#909090] font-medium mb-[6px] last-of-type:mb-0 cursor-pointer transition-[color] duration-300 hover:text-white',
   };
@@ -72,7 +72,7 @@ export default function UserAction() {
         tabIndex={0}
       >
         <p className='font-semibold uppercase'>{getMonogram(user.username)}</p>
-        <div className='flex h-[40px] w-[40px] items-center justify-center rounded-[12px] border-[1px] border-[#262626] bg-[#121212]'>
+        <div className='flex h-[40px] w-[40px] items-center justify-center rounded-[12px] border-[1px] border-gray bg-gray-dark'>
           <User />
         </div>
       </div>

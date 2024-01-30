@@ -14,10 +14,12 @@ import { useAuthStore } from '@/store/auth';
 
 import MenuAction from '@/components/Header/MenuAction';
 import MobileNavigation from '@/components/Header/Dropdowns/MobileNavigation';
-import MobileSearch from '@/components/Header/Dropdowns/MobileSearch';
 import DesktopNavigation from '@/components/Header/DesktopNavigation';
 import SearchInput from '@/components/Header/SearchInput';
 import UserAction from '@/components/Header/UserAction';
+
+import AuthModal from '@/components/Modals/AuthModal';
+import SearchModal from '@/components/Modals/SearchModal';
 
 export default function Header() {
   const router = useRouter();
@@ -25,16 +27,15 @@ export default function Header() {
   const { set: setModal } = useModalsStore();
   const { authenticated } = useAuthStore();
   const [menuIsActive, setMenuIsActive] = useState<boolean>(false);
-  const [searchIsActive, setSearchIsActive] = useState<boolean>(false);
 
-  const authModal = () => {
+  const modalHandler = (name: string) => {
     backdropToggle();
-    setModal('auth');
+    setModal(name);
   };
 
   return (
     <>
-      <header className='header sticky top-0 z-[2] flex h-[65px] items-center border-b-[1px] border-[#262626] lg:h-[90px]'>
+      <header className='header sticky top-0 z-[2] flex h-[65px] items-center border-b-[1px] border-gray lg:h-[90px]'>
         <div className='container mx-auto px-[20px]'>
           <div className='grid grid-cols-3 lg:hidden'>
             <div
@@ -53,12 +54,14 @@ export default function Header() {
             <div className='flex items-center justify-end gap-[22px]'>
               <div
                 className='action'
-                onClick={() => setSearchIsActive(!searchIsActive)}
+                onClick={() => modalHandler('search')}
               >
-                {!searchIsActive && <Search />}
-                {searchIsActive && <MenuAction isActive={searchIsActive} />}
+                <Search />
               </div>
-              <div className='action'>
+              <div
+                className='action'
+                onClick={() => modalHandler('auth')}
+              >
                 <User />
               </div>
             </div>
@@ -80,7 +83,9 @@ export default function Header() {
                 {!authenticated && (
                   <button
                     className='btn btn-secondary !w-[90px]'
-                    onClick={() => authModal()}
+                    onClick={() => modalHandler('auth')}
+                    type='button'
+                    aria-label='Sign In'
                   >
                     Sign In
                   </button>
@@ -90,6 +95,8 @@ export default function Header() {
                     <button
                       className='btn btn-secondary'
                       onClick={() => router.push('/sell')}
+                      type='button'
+                      aria-label='Sell'
                     >
                       Sell
                     </button>
@@ -102,7 +109,8 @@ export default function Header() {
         </div>
       </header>
       <MobileNavigation isActive={menuIsActive} />
-      <MobileSearch isActive={searchIsActive} />
+      <AuthModal />
+      <SearchModal />
     </>
   );
 }

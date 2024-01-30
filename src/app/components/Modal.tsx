@@ -24,7 +24,7 @@ export default function Modal({ name, children }: Required<ModalProps>) {
 
   if (backdropIsActive && activeModal === name) {
     return (
-      <div className='fixed left-[50%] top-[50%] z-20 h-auto w-[420px] -translate-x-[50%] -translate-y-[50%] rounded-[12px] border-[1px] border-[#121212] bg-[#121212]'>
+      <div className='fixed left-[50%] bottom-0 md:bottom-auto md:top-[50%] z-20 h-auto w-full md:w-[420px] -translate-x-[50%] md:-translate-y-[50%] rounded-[12px] bg-gray-dark'>
         <div className='p-[35px]'>
           <div
             className='ml-auto w-[25px] cursor-pointer [&>svg]:text-[#656565]'

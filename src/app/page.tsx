@@ -5,7 +5,7 @@ import ProductsHeader from './components/Homepage/ProductsHeader';
 
 export default function Home() {
   return (
-    <main className='flex home'>
+    <main className='home flex'>
       <div className='container relative mx-auto px-[20px] py-[40px] lg:py-[80px]'>
         <h1 className='text-center'>Buy, sell your best fashion.</h1>
         <p className='mt-[12px] text-center text-xl font-medium'>

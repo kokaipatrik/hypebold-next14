@@ -3,7 +3,7 @@
 
   &.is-open {
     .select__dropdown {
-      @apply top-[calc(100%+10px)] visible scale-100 opacity-[1];
+      @apply visible top-[calc(100%+10px)] scale-100 opacity-[1];
     }
 
     .select__arrow {
@@ -20,33 +20,33 @@
   }
 
   .select__selected {
-    @apply relative h-[40px] text-ellipsis rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] text-[14px] font-medium cursor-pointer;
+    @apply relative h-[40px] cursor-pointer text-ellipsis rounded-[12px] border-[1px] border-gray bg-gray-dark px-[12px] py-[8px] text-[14px] font-medium;
   }
 
   .select__arrow {
-    @apply absolute top-[50%] -translate-y-[50%] right-[10px] w-[20px] h-[20px] border-[1.5px] border-[#606060] rounded-[10px] transition-all duration-300;
+    @apply absolute right-[10px] top-[50%] h-[20px] w-[20px] -translate-y-[50%] rounded-[10px] border-[1.5px] border-[#606060] transition-all duration-300;
 
     &::before,
     &::after {
-      @apply absolute w-[1.5px] h-[6px] bg-[#606060] rounded-[1px] top-[50%] -translate-y-[50%] transition-all duration-300;
+      @apply absolute top-[50%] h-[6px] w-[1.5px] -translate-y-[50%] rounded-[1px] bg-[#606060] transition-all duration-300;
 
       content: '';
     }
 
     &::before {
-      @apply -rotate-45 left-[6px];
+      @apply left-[6px] -rotate-45;
     }
 
     &::after {
-      @apply rotate-45 right-[6px];
+      @apply right-[6px] rotate-45;
     }
   }
 
   .select__dropdown {
-    @apply absolute top-[100%] w-full rounded-[12px] border-[1px] border-[#262626] bg-[#121212] px-[12px] py-[8px] transition-all invisible scale-95 opacity-0;
+    @apply invisible absolute top-[100%] w-full scale-95 rounded-[12px] border-[1px] border-gray bg-gray-dark px-[12px] py-[8px] opacity-0 transition-all;
   }
-  
+
   .select__item {
-    @apply text-[#555555] text-[14px] leading-[28px] transition-all duration-300 hover:text-[#A0A0A0] cursor-pointer;
+    @apply cursor-pointer text-[14px] leading-[28px] text-gray-5 transition-all duration-300 hover:text-[#A0A0A0];
   }
 }

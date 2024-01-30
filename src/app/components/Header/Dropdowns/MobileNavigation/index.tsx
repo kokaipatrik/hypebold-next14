@@ -52,13 +52,13 @@ export default function MobileNavigation({ isActive }: MobileNavigationProps) {
               }`}
             >
               <li className={`${styles.listItemMain} ${styles.listItem}`}>
-                <a
+                <p
                   className='flex cursor-pointer items-center justify-between'
                   onClick={() => setBrandsIsActive(true)}
                 >
                   Brands
                   <ArrowRightIcon />
-                </a>
+                </p>
               </li>
               {config.categories.map((category: Category, key: number) => {
                 return (

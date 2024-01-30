@@ -8,7 +8,6 @@ import StoreInitializer from '@/app/StoreInitializer';
 import AuthHandler from '@/app/AuthHandler';
 import Header from '@/components/Header';
 import Backdrop from '@/components/Backdrop';
-import AuthModal from '@/components/Modals/AuthModal';
 import StoreHydration from './StoreHydration';
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default async function RootLayout({
             <Header />
             {children}
             <Backdrop />
-            <AuthModal />
           </ReactQueryProvider>
         </StoreHydration>
       </body>

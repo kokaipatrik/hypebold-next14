@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import '@/app/assets/scss/select.scss';
 
@@ -9,6 +9,7 @@ interface SelectProps {
   items: any;
   select: any;
   selected?: any;
+  selectedDependency?: any;
 }
 
 export default function Select({
@@ -18,6 +19,7 @@ export default function Select({
   items,
   select,
   selected,
+  selectedDependency,
 }: SelectProps) {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState(
@@ -36,10 +38,28 @@ export default function Select({
       name,
       item: {
         name: item.name,
-        value: item.url,
+        value: item.url ? item.url : item.value,
       },
     });
   };
+
+  useEffect(() => {
+    if (!selected) {
+      setSelectedItem({
+        name: '',
+        value: '',
+      });
+    }
+  }, [selected]);
+
+  useEffect(() => {
+    if (Object.keys(selectedItem.value).includes(selectedDependency?.value)) {
+      setSelectedItem((prevState: any) => ({
+        ...prevState,
+        name: prevState.value[selectedDependency.value],
+      }));
+    }
+  }, [selectedDependency]);
 
   return (
     <div>

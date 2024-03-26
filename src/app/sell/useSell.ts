@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 import { useConfigStore } from '@/store/config';
 import type { Config, Size } from '@/store/config.types';
@@ -12,7 +12,19 @@ export default function useSell() {
       value: 'eu',
     },
   });
-  const isSneaker = form?.category?.value === 'sneaker';
+
+  const isSneaker = useMemo(() => {
+    return form?.category?.value === 'sneaker';
+  }, [form?.category?.value]);
+
+  useEffect(() => {
+    if (form?.size) {
+      setForm((prevState) => {
+        const { size, ...state } = prevState;
+        return state;
+      });
+    }
+  }, [isSneaker]);
 
   const getSizesByCategory = (slug: string) => {
     const sizes = config?.sizes.filter((s) => s.categoryUrl === slug);
@@ -20,7 +32,7 @@ export default function useSell() {
     if (isSneaker) {
       return sizes.map((size: any) => ({
         name: size.size[form?.sizeType.value],
-        value: size.size[form?.sizeType.value],
+        value: size.size,
       }));
     } else {
       return sizes.map((size) => ({
